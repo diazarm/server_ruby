@@ -1,24 +1,40 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Crear el proyecto Rails con PostgreSQL como base de datos
 
-Things you may want to cover:
 
-* Ruby version
+## Primero: creacion del proyecto
 
-* System dependencies
 
-* Configuration
+ rails new proyecto --database=postgresql
 
-* Database creation
 
-* Database initialization
+## Configurar la contraseña en database.yml:
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+Editar la sección development para incluir username, password y host.
+## Crear las bases de datos:
 
-* Deployment instructions
+ rails db:create
 
-* ...
+
+## Generar un CRUD automáticamente (modelo, controlador y vistas):
+
+ rails generate scaffold Post title:string body:text
+
+
+## Aplicar las migraciones para crear las tablas en la base de datos:
+
+ rails db:migrate
+
+
+## Iniciar el servidor para probar el CRUD:
+
+ rails server
+
+
+## Ahora puedes acceder al CRUD en http://localhost:3000/posts.
+
+## Autor
+
+- [Marcelo Diaz](https://www.github.com/diazarm)
+
